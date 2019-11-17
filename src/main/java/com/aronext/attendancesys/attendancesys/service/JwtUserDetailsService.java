@@ -26,7 +26,7 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-
+        //TODO  this validation should be taken from the database
         if ("sysadmin".equals(username)) {
             String password=bCryptPasswordEncoder.encode("12345");
             return new User("sysadmin", password,
