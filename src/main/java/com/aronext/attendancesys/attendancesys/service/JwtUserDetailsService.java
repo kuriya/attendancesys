@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 
 /**
@@ -27,15 +26,17 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-// Validate with the database
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        //TODO  this validation should be taken from the database
+        com.aronext.attendancesys.attendancesys.model.User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found with username: " + username);
+        }
+
         if ("sysadmin".equals(username)) {
-            String password=bCryptPasswordEncoder.encode("12345");
-            return new User("sysadmin", password,
-                    new ArrayList<>());
+            return new User(user.getUsername(), user.getPassword(), new ArrayList<>());
         } else {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
@@ -45,6 +46,7 @@ public class JwtUserDetailsService implements UserDetailsService {
         com.aronext.attendancesys.attendancesys.model.User newUser = new com.aronext.attendancesys.attendancesys.model.User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        newUser.setRole(user.getRole());
         return userRepository.save(newUser);
     }
 }

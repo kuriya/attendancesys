@@ -1,5 +1,11 @@
 # attendancesys
 attendence system
+1. Start applicaion and run below mysql query
+
+INSERT INTO `attendancesys`.`user` (`password`, `username`, `role`) VALUES ('$2y$12$b.scTXUT8K/8u4TKDESgSeKfOhJbXbgpC3ld6ep593cDnST/LZMTq', 'sysadmin', 'admin');
+
+Default username = sysadmin
+Default password = 12345
 
 1. At the begging you need to send request to server with your username and password.
 http://localhost:8080/authenticate
