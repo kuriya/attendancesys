@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 
 @Component
-public class JwtUserDetailsService implements UserDetailsService {
+public class UserService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder bCryptPasswordEncoder;

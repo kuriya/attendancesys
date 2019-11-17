@@ -1,7 +1,7 @@
 package com.aronext.attendancesys.attendancesys.controller;
 
 import com.aronext.attendancesys.attendancesys.model.UserDTO;
-import com.aronext.attendancesys.attendancesys.service.JwtUserDetailsService;
+import com.aronext.attendancesys.attendancesys.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AttendanceController {
 
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private UserService userDetailsService;
 
     @RequestMapping({ "/hello" })
     public String firstPage() {

@@ -9,7 +9,7 @@ package com.aronext.attendancesys.attendancesys.controller;
 import com.aronext.attendancesys.attendancesys.config.JwtTokenUtil;
 import com.aronext.attendancesys.attendancesys.model.JwtRequest;
 import com.aronext.attendancesys.attendancesys.model.JwtResponse;
-import com.aronext.attendancesys.attendancesys.service.JwtUserDetailsService;
+import com.aronext.attendancesys.attendancesys.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-public class JwtAuthenticationController {
+public class AuthenticationController {
 
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -35,7 +35,7 @@ public class JwtAuthenticationController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private UserService userDetailsService;
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
