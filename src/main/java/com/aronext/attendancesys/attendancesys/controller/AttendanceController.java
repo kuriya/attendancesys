@@ -1,6 +1,12 @@
 package com.aronext.attendancesys.attendancesys.controller;
 
+import com.aronext.attendancesys.attendancesys.model.UserDTO;
+import com.aronext.attendancesys.attendancesys.service.JwtUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,9 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AttendanceController {
 
+    @Autowired
+    private JwtUserDetailsService userDetailsService;
+
     @RequestMapping({ "/hello" })
     public String firstPage() {
         return "Hello World";
+    }
+
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+        return ResponseEntity.ok(userDetailsService.save(user));
     }
 
 }
