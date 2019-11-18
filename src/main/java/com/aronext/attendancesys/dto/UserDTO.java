@@ -1,6 +1,6 @@
-package com.aronext.attendancesys.attendancesys.dto;
+package com.aronext.attendancesys.dto;
 
-import com.aronext.attendancesys.attendancesys.constant.Role;
+import com.aronext.attendancesys.constant.Role;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;

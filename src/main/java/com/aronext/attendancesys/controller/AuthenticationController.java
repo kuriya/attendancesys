@@ -1,4 +1,4 @@
-package com.aronext.attendancesys.attendancesys.controller;
+package com.aronext.attendancesys.controller;
 
 /**
  * @author Dilshan Niroda
@@ -6,10 +6,10 @@ package com.aronext.attendancesys.attendancesys.controller;
  * @Time 1:04 PM
  */
 
-import com.aronext.attendancesys.attendancesys.config.JwtTokenUtil;
-import com.aronext.attendancesys.attendancesys.model.JwtRequest;
-import com.aronext.attendancesys.attendancesys.model.JwtResponse;
-import com.aronext.attendancesys.attendancesys.service.UserService;
+import com.aronext.attendancesys.config.JwtTokenUtil;
+import com.aronext.attendancesys.model.JwtRequest;
+import com.aronext.attendancesys.model.JwtResponse;
+import com.aronext.attendancesys.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

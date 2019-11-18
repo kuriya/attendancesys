@@ -1,4 +1,4 @@
-package com.aronext.attendancesys.attendancesys.constant;
+package com.aronext.attendancesys.constant;
 
 /**
  * @author Dilshan Niroda

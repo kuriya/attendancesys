@@ -1,4 +1,4 @@
-package com.aronext.attendancesys.attendancesys.config;
+package com.aronext.attendancesys.config;
 
 /**
  * @author Dilshan Niroda

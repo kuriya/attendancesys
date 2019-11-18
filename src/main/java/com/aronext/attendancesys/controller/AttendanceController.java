@@ -1,7 +1,7 @@
-package com.aronext.attendancesys.attendancesys.controller;
+package com.aronext.attendancesys.controller;
 
-import com.aronext.attendancesys.attendancesys.dto.UserDTO;
-import com.aronext.attendancesys.attendancesys.service.UserService;
+import com.aronext.attendancesys.dto.UserDTO;
+import com.aronext.attendancesys.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;

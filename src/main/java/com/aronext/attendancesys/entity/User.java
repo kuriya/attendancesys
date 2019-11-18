@@ -1,4 +1,4 @@
-package com.aronext.attendancesys.attendancesys.entity;
+package com.aronext.attendancesys.entity;
 
 /**
  * @author Dilshan Niroda

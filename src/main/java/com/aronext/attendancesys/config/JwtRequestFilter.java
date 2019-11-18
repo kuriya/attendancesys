@@ -1,4 +1,4 @@
-package com.aronext.attendancesys.attendancesys.config;
+package com.aronext.attendancesys.config;
 
 /**
  * @author Dilshan Niroda
@@ -7,7 +7,7 @@ package com.aronext.attendancesys.attendancesys.config;
  */
 
 
-import com.aronext.attendancesys.attendancesys.service.UserService;
+import com.aronext.attendancesys.service.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
