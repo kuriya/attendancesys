@@ -46,7 +46,7 @@ public class UserService implements UserDetailsService {
         com.aronext.attendancesys.attendancesys.model.User newUser = new com.aronext.attendancesys.attendancesys.model.User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        newUser.setRole(user.getRole());
+        newUser.setRole(user.getRole().name());
         return userRepository.save(newUser);
     }
 }

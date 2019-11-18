@@ -2,7 +2,7 @@
 attendence system
 1. Start applicaion and run below mysql query
 
-INSERT INTO `attendancesys`.`user` (`password`, `username`, `role`) VALUES ('$2y$12$b.scTXUT8K/8u4TKDESgSeKfOhJbXbgpC3ld6ep593cDnST/LZMTq', 'sysadmin', 'admin');
+INSERT INTO `attendancesys`.`user` (`password`, `username`, `role`) VALUES ('$2y$12$b.scTXUT8K/8u4TKDESgSeKfOhJbXbgpC3ld6ep593cDnST/LZMTq', 'sysadmin', 'ADMIN');
 
 Default username = sysadmin
 Default password = 12345

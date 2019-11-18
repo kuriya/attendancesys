@@ -1,5 +1,10 @@
 package com.aronext.attendancesys.attendancesys.model;
 
+import com.aronext.attendancesys.attendancesys.constant.Role;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 /**
  * @author Dilshan Niroda
  * @Date 2019-11-17
@@ -7,9 +12,14 @@ package com.aronext.attendancesys.attendancesys.model;
  */
 public class UserDTO {
 
+    @NotEmpty(message = "Please provide an username")
     private String username;
+
+    @NotEmpty(message = "Please provide a password")
     private String password;
-    private String role;
+
+    @NotNull(message = "Please provide a role")
+    private Role role;
 
     public String getUsername() {
         return username;
@@ -27,11 +37,11 @@ public class UserDTO {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 }
