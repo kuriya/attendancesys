@@ -29,7 +29,7 @@ public class AttendanceController {
 
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ResponseEntity<?> saveUser(@Valid @RequestBody UserDTO user) throws Exception {
+    public ResponseEntity<?> saveUser(@Valid @RequestBody UserDTO user){
         return ResponseEntity.ok(userDetailsService.save(user));
     }
 
