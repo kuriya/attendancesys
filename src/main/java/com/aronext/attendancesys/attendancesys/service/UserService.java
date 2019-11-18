@@ -35,11 +35,8 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
 
-        if ("sysadmin".equals(username)) {
-            return new User(user.getUsername(), user.getPassword(), new ArrayList<>());
-        } else {
-            throw new UsernameNotFoundException("User not found with username: " + username);
-        }
+        return new User(user.getUsername(), user.getPassword(), new ArrayList<>());
+
     }
 
     public com.aronext.attendancesys.attendancesys.model.User save(UserDTO user) {
