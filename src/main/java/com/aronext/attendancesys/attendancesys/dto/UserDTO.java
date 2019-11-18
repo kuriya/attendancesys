@@ -1,4 +1,4 @@
-package com.aronext.attendancesys.attendancesys.model;
+package com.aronext.attendancesys.attendancesys.dto;
 
 import com.aronext.attendancesys.attendancesys.constant.Role;
 

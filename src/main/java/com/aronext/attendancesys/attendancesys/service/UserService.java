@@ -1,7 +1,7 @@
 package com.aronext.attendancesys.attendancesys.service;
 
+import com.aronext.attendancesys.attendancesys.dto.UserDTO;
 import com.aronext.attendancesys.attendancesys.repository.UserRepository;
-import com.aronext.attendancesys.attendancesys.model.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 /**
@@ -30,7 +31,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        com.aronext.attendancesys.attendancesys.model.User user = userRepository.findByUsername(username);
+        com.aronext.attendancesys.attendancesys.entity.User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
@@ -39,8 +40,8 @@ public class UserService implements UserDetailsService {
 
     }
 
-    public com.aronext.attendancesys.attendancesys.model.User save(UserDTO user) {
-        com.aronext.attendancesys.attendancesys.model.User newUser = new com.aronext.attendancesys.attendancesys.model.User();
+    public com.aronext.attendancesys.attendancesys.entity.User save(UserDTO user) {
+        com.aronext.attendancesys.attendancesys.entity.User newUser = new com.aronext.attendancesys.attendancesys.entity.User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         newUser.setRole(user.getRole().name());

@@ -6,7 +6,7 @@ package com.aronext.attendancesys.attendancesys.repository;
  * @Time 9:22 PM
  */
 
-import com.aronext.attendancesys.attendancesys.model.User;
+import com.aronext.attendancesys.attendancesys.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

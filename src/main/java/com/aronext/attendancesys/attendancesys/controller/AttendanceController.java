@@ -1,6 +1,6 @@
 package com.aronext.attendancesys.attendancesys.controller;
 
-import com.aronext.attendancesys.attendancesys.model.UserDTO;
+import com.aronext.attendancesys.attendancesys.dto.UserDTO;
 import com.aronext.attendancesys.attendancesys.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
