@@ -1,8 +1,8 @@
 # attendancesys
 attendence system
-1. Start applicaion and run below mysql query
+1. Start application as a Springboot application.
 
-INSERT INTO `attendancesys`.`user` (`password`, `username`, `role`) VALUES ('$2y$12$b.scTXUT8K/8u4TKDESgSeKfOhJbXbgpC3ld6ep593cDnST/LZMTq', 'sysadmin', 'ADMIN');
+2. Select the database as attendancesys and import the script.sql file. This will be created default system user
 
 Default username = sysadmin
 Default password = 12345
