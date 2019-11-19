@@ -55,12 +55,15 @@ public class AuthenticationController {
             authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
         }catch (Exception e){
             modelAndView.setViewName("login");
+            modelAndView.addObject("error",true);
             return modelAndView;
         }
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         final String token = jwtTokenUtil.generateToken(userDetails);
         if(token !=null){
             modelAndView.setViewName("dashboard/dashboard");
+            modelAndView.addObject("token",token);
+
         }else{
             modelAndView.setViewName("login");
         }
